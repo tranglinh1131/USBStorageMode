@@ -1,0 +1,16 @@
+#!/usr/bin/expect -f
+# ssh-helper.exp <host> <password> <remote-command>
+# Prints the command's output on stdout. Any ssh warning goes to stderr so it
+# cannot be mistaken for the result.
+set timeout 40
+set host [lindex $argv 0]
+set pass [lindex $argv 1]
+set cmd  [lindex $argv 2]
+spawn ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -o ConnectTimeout=10 root@$host $cmd
+expect {
+    -re "(?i)password:" { send "$pass\r"; exp_continue }
+    timeout { puts "\n[ssh timed out]"; exit 1 }
+    eof
+}
+catch wait result
+exit [lindex $result 3]
