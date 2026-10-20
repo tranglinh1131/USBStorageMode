@@ -6,7 +6,7 @@ Turn your device's **MicroSD card into a USB drive** by connecting it to your co
 
 Transfer ROMs, save files, photos, and music **without removing the MicroSD card**.
 
-Compatible with the **TrimUI Brick Pro** running **NX Redux** or **NextUI**.
+Compatible with the **TrimUI Brick, Brick Hammer, Brick Pro, Smart Pro, Smart Pro S** running **NX Redux** or **NextUI**.
 
 ---
 
